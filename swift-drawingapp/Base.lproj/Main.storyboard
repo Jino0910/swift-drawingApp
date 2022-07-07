@@ -1,24 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="swift_drawingapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hC-JN-g4L" customClass="DrawLineView" customModule="swift_drawingapp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyx-gR-xC6">
+                                <rect key="frame" x="974" y="34" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="pRU-Wr-dEb"/>
+                                    <constraint firstAttribute="width" constant="40" id="tkl-9H-SrF"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="plus.square.on.square" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4O-sR-q60">
+                                <rect key="frame" x="926" y="34" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ree-cr-uBd"/>
+                                    <constraint firstAttribute="width" constant="40" id="pGb-bD-LUe"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="pencil.and.outline" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHz-QX-w7L">
+                                <rect key="frame" x="878" y="34" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="FN2-Zz-XYE"/>
+                                    <constraint firstAttribute="height" constant="40" id="vNa-Yi-2Se"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oyx-gR-xC6" secondAttribute="trailing" constant="10" id="33i-bH-Ydx"/>
+                            <constraint firstItem="nHz-QX-w7L" firstAttribute="height" secondItem="Q4O-sR-q60" secondAttribute="height" id="4nY-TE-Pq6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8hC-JN-g4L" secondAttribute="trailing" id="BCr-Px-SyY"/>
+                            <constraint firstItem="oyx-gR-xC6" firstAttribute="leading" secondItem="Q4O-sR-q60" secondAttribute="trailing" constant="8" symbolic="YES" id="ERM-Im-4V4"/>
+                            <constraint firstItem="Q4O-sR-q60" firstAttribute="leading" secondItem="nHz-QX-w7L" secondAttribute="trailing" constant="8" symbolic="YES" id="MUG-hq-Bjr"/>
+                            <constraint firstAttribute="top" secondItem="8hC-JN-g4L" secondAttribute="top" id="Nup-g8-d3t"/>
+                            <constraint firstItem="oyx-gR-xC6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="O8B-FD-HXN"/>
+                            <constraint firstItem="nHz-QX-w7L" firstAttribute="width" secondItem="Q4O-sR-q60" secondAttribute="width" id="X29-34-sTv"/>
+                            <constraint firstItem="Q4O-sR-q60" firstAttribute="centerY" secondItem="oyx-gR-xC6" secondAttribute="centerY" id="YJG-ij-Fwz"/>
+                            <constraint firstItem="Q4O-sR-q60" firstAttribute="height" secondItem="oyx-gR-xC6" secondAttribute="height" id="j0t-Ow-HHe"/>
+                            <constraint firstItem="8hC-JN-g4L" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="nMl-ot-Shq"/>
+                            <constraint firstItem="Q4O-sR-q60" firstAttribute="width" secondItem="oyx-gR-xC6" secondAttribute="width" id="vUj-Nq-r4S"/>
+                            <constraint firstItem="nHz-QX-w7L" firstAttribute="centerY" secondItem="Q4O-sR-q60" secondAttribute="centerY" id="xiQ-Ja-f2V"/>
+                            <constraint firstItem="8hC-JN-g4L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zUe-qc-LER"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addSquareButton" destination="oyx-gR-xC6" id="Kqt-xG-CNG"/>
+                        <outlet property="drawLineView" destination="8hC-JN-g4L" id="V2D-7Y-3e6"/>
+                        <outlet property="drawingButton" destination="Q4O-sR-q60" id="QRp-AM-Wwx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-42.028985507246382" y="-17.410714285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pencil.and.outline" catalog="system" width="128" height="128"/>
+        <image name="plus.square.on.square" catalog="system" width="128" height="113"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
